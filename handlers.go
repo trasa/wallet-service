@@ -1,11 +1,11 @@
 package main
 
 import (
-	"net/http"
-	"fmt"
-	"html"
 	"encoding/json"
+	"fmt"
 	"github.com/gorilla/mux"
+	"html"
+	"net/http"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
@@ -13,9 +13,9 @@ func Index(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetWallets(w http.ResponseWriter, r *http.Request) {
-	wallets := Wallets {
-		Wallet {  CurrencyType: "gold", Amount: 123},
-		Wallet {  CurrencyType: "silver", Amount: 5555},
+	wallets := Wallets{
+		Wallet{CurrencyType: "gold", Amount: 123},
+		Wallet{CurrencyType: "silver", Amount: 5555},
 	}
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
